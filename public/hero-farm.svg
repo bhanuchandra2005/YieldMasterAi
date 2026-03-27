@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6F4EE"/>
+      <stop offset="0.55" stop-color="#F2EBD9"/>
+      <stop offset="1" stop-color="#E9E1C8"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="520" x2="0" y2="1080">
+      <stop offset="0" stop-color="#BEE6B6"/>
+      <stop offset="0.55" stop-color="#82C48B"/>
+      <stop offset="1" stop-color="#4FA26A"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(290 210) rotate(90) scale(220)">
+      <stop offset="0" stop-color="#FFE7A6"/>
+      <stop offset="0.55" stop-color="#FFD56A"/>
+      <stop offset="1" stop-color="#FFD56A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hud" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16A34A" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#22C55E" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <circle cx="290" cy="210" r="240" fill="url(#sun)"/>
+
+  <!-- Distant haze -->
+  <path d="M0 520C280 430 520 410 820 430C1120 450 1420 470 1920 410V600H0V520Z" fill="#FFFFFF" opacity="0.35"/>
+
+  <!-- Fields -->
+  <path d="M0 520C320 430 620 420 980 450C1340 480 1600 520 1920 470V1080H0V520Z" fill="url(#field)"/>
+
+  <!-- Furrow lines (perspective) -->
+  <g opacity="0.22" stroke="#0B5D2A" stroke-width="6">
+    <path d="M0 700C260 610 520 590 820 620C1120 650 1460 700 1920 640"/>
+    <path d="M0 770C260 690 520 670 820 700C1120 730 1460 780 1920 720"/>
+    <path d="M0 840C260 770 520 750 820 780C1120 810 1460 860 1920 800"/>
+    <path d="M0 910C260 850 520 830 820 860C1120 890 1460 940 1920 880"/>
+    <path d="M0 980C260 930 520 910 820 940C1120 970 1460 1020 1920 960"/>
+  </g>
+
+  <!-- Subtle tech/HUD overlay grid -->
+  <g opacity="0.22">
+    <rect x="0" y="0" width="1920" height="1080" fill="url(#hud)"/>
+    <g stroke="#10B981" stroke-opacity="0.25" stroke-width="1">
+      <path d="M120 0V1080"/>
+      <path d="M360 0V1080"/>
+      <path d="M600 0V1080"/>
+      <path d="M840 0V1080"/>
+      <path d="M1080 0V1080"/>
+      <path d="M1320 0V1080"/>
+      <path d="M1560 0V1080"/>
+      <path d="M1800 0V1080"/>
+      <path d="M0 140H1920"/>
+      <path d="M0 300H1920"/>
+      <path d="M0 460H1920"/>
+      <path d="M0 620H1920"/>
+      <path d="M0 780H1920"/>
+      <path d="M0 940H1920"/>
+    </g>
+  </g>
+</svg>
+

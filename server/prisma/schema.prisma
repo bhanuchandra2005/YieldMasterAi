@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  location  String?
+  avatarUrl String?
+  plan      String   @default("free")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  settings UserSettings?
+}
+
+model UserSettings {
+  id                String @id @default(cuid())
+  userId            String @unique
+  user              User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emailNotifications Boolean @default(true)
+  weatherAlerts     Boolean @default(true)
+  weeklyDigest      Boolean @default(false)
+  twoFactorEnabled  Boolean @default(false)
+  dataSharing       Boolean @default(true)
+  metricUnits       Boolean @default(true)
+  autoRefresh       Boolean @default(true)
+}
